@@ -1,1 +1,1 @@
-# utils is some Commonly used tools
+# utils is some commonly used tools
