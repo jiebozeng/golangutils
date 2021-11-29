@@ -9,6 +9,13 @@ import (
 	"time"
 )
 
+//uint16 to bytes
+func Uint16ToBytes(n uint16) []byte {
+	bytesBuffer := bytes.NewBuffer([]byte{})
+	binary.Write(bytesBuffer, binary.BigEndian, n)
+	return bytesBuffer.Bytes()
+}
+
 //int32 to bytes
 func Int32ToBytes(n int32) []byte {
 	x := int32(n)
