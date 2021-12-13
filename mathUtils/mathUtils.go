@@ -6,15 +6,17 @@ import (
 	"time"
 )
 
+
+func init() {
+	rand.Seed(time.Now().UnixNano())
+}
+
 //取float小数点后N位
 func GetFloatNBit(source float64,n int32) float64 {
 	nten := math.Pow(10,float64(n))
 	return math.Round(source*nten)/nten
 }
 
-func init() {
-	rand.Seed(time.Now().UnixNano())
-}
 
 func RandGroup(p ...uint32) int {
 	if p == nil {
