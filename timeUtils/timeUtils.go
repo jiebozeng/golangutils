@@ -3,7 +3,7 @@
 package timeUtils
 
 import (
-	"dgames/src/utils/intAndByte"
+	"github.com/jiebozeng/golangutils/intAndByte"
 	"github.com/golang-module/carbon"
 	"strconv"
 	"strings"
