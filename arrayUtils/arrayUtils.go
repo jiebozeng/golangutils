@@ -1,10 +1,10 @@
 package arrayUtils
 
 import "reflect"
-// add slice 
+// add slice , array add slice 
 func ItemExists(targetArray interface{}, item interface{}) bool {
 	arr := reflect.ValueOf(targetArray)
-	if arr.Kind() != reflect.Array || arr.Kind() != reflect.Slice{
+	if arr.Kind() != reflect.Array && arr.Kind() != reflect.Slice{
 		panic("targetArray Invalid data-type")
 	}
 	for i := 0; i < arr.Len(); i++ {
