@@ -1,7 +1,7 @@
 package arrayUtils
 
 import "reflect"
-
+// add slice 
 func ItemExists(targetArray interface{}, item interface{}) bool {
 	arr := reflect.ValueOf(targetArray)
 	if arr.Kind() != reflect.Array || arr.Kind() != reflect.Slice{
