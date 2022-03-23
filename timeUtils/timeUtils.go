@@ -4,7 +4,7 @@ package timeUtils
 
 import (
 	"github.com/golang-module/carbon"
-	"github.com/jiebozeng/golangutils/intAndByte"
+	"golangutils/intAndByte"
 	"strconv"
 	"strings"
 	"time"
@@ -47,7 +47,7 @@ func GetNowTimeString() string {
 
 //返回当前时间的时间戮 秒
 func GetNowTimestampInt64() int64 {
-	return carbon.Now().ToTimestamp()
+	return carbon.Now().Timestamp()
 }
 
 //参数的格式 2006-01-02 15:04:05 返回 true or false
