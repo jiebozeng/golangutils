@@ -17,5 +17,6 @@ func Print(args ...interface{}) {
 	for _, v := range args {
 		fmt.Print(v, " ")
 	}
+	fmt.Println()
 	fmt.Println("------8888------")
 }
