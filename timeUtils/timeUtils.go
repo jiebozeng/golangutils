@@ -4,7 +4,6 @@ package timeUtils
 
 import (
 	"github.com/golang-module/carbon"
-	"github.com/jiebozeng/golangutils/intAndByte"
 	"strconv"
 	"strings"
 	"time"
@@ -62,7 +61,10 @@ func HourAndMinuteAndSecondToSecond(t string) int64 {
 	if len(tt) < 3 {
 		return 0
 	}
-	return intAndByte.ToInt64(tt[0])*3600 + intAndByte.ToInt64(tt[1])*60 + intAndByte.ToInt64(tt[2])
+	h, _ := strconv.ParseInt(tt[0], 10, 64)
+	m, _ := strconv.ParseInt(tt[1], 10, 64)
+	s, _ := strconv.ParseInt(tt[2], 10, 64)
+	return h*3600 + m*60 + s
 }
 
 //15小时45分钟32秒 后的时间
