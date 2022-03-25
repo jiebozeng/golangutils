@@ -1,4 +1,4 @@
-module golangutils
+module github.com/jiebozeng/golangutils
 
 go 1.16
 

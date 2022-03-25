@@ -8,6 +8,8 @@ import (
 )
 
 func main() {
+	echo
+
 	timer := tr.NewTimer(time.Second)
 	timer.Start()
 
