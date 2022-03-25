@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	tr "golangutils/timer"
+	tr "github.com/jiebozeng/golangutils/timer"
 	"runtime"
 	"time"
 )
