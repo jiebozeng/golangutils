@@ -2,17 +2,16 @@ package main
 
 import (
 	"fmt"
+	"github.com/jiebozeng/golangutils/debugs"
 	tr "github.com/jiebozeng/golangutils/timer"
 	"runtime"
 	"time"
 )
 
 func main() {
-	echo
-
 	timer := tr.NewTimer(time.Second)
 	timer.Start()
-
+	debugs.Println("888")
 	// 1秒的定时器,执行10次
 	timer.AddTimer(time.Second, 10, func(*tr.Timer) {
 		fmt.Println("timer 1 second")
