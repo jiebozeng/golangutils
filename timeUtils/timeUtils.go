@@ -4,7 +4,7 @@ package timeUtils
 
 import (
 	"github.com/golang-module/carbon"
-	"golangutils/intAndByte"
+	"github.com/jiebozeng/golangutils/intAndByte"
 	"strconv"
 	"strings"
 	"time"
