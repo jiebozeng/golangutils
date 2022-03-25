@@ -2,7 +2,7 @@ package debugs
 
 import "fmt"
 
-// println clearly
+// println clearly 
 func Println(args ...interface{}) {
 	fmt.Println("------------")
 	for _, v := range args {
@@ -11,7 +11,7 @@ func Println(args ...interface{}) {
 	fmt.Println("------------")
 }
 
-// print clearly
+// print clearly not ln
 func Print(args ...interface{}) {
 	fmt.Println("------------")
 	for _, v := range args {
