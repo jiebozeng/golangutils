@@ -1,4 +1,4 @@
-package log
+package debug
 
 import "fmt"
 
@@ -15,7 +15,7 @@ func Println(args ...interface{}) {
 func Print(args ...interface{}) {
 	fmt.Println("------------")
 	for _, v := range args {
-		fmt.Print(v," ")
+		fmt.Print(v, " ")
 	}
 	fmt.Println("------------")
 }
