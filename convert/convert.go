@@ -178,3 +178,41 @@ func ToBytes(value interface{}) []byte {
 	//log.Debug("ToBytes 类型没有定义:%v>>%T", value, value)
 	return []byte{}
 }
+
+/**
+0 return false else  return true
+*/
+func Int32ToBool(n int32) bool {
+	if n == 0 {
+		return false
+	}
+	return true
+}
+
+/**
+0 return false else  return true
+*/
+func Int64ToBool(n int64) bool {
+	if n == 0 {
+		return false
+	}
+	return true
+}
+/**
+true return 1 else return 0
+ */
+func BoolToInt32(b bool) int32 {
+	if b {
+		return 1
+	}
+	return 0
+}
+/**
+true return 1 else return 0
+*/
+func BoolToInt64(b bool) int64  {
+	if b {
+		return 1
+	}
+	return 0
+}
