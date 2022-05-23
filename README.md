@@ -1,8 +1,8 @@
 # utils is some commonly used tools
 # include: 
-# arrayUtils 
+# arrayutils 
 # convert (change type into what you want)
-# intAndByte (int into byte, interface to int)
+# intandbyte (int into byte, interface to int)
 # log
-# mathUtils 
-# timeUtils
+# mathutils 
+# timeutils
