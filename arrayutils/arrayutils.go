@@ -1,4 +1,4 @@
-package arrayUtils
+package arrayutils
 
 import (
 	"math/rand"
@@ -134,6 +134,7 @@ func Rotate(matrix [][]int32) [][]int32 {
 	}
 	return matrix
 }
+
 //Rotate the matrix 180 degrees counterclockwise
 func Rotate180(matrix [][]int32) [][]int32 {
 	n := len(matrix)
@@ -148,6 +149,7 @@ func Rotate180(matrix [][]int32) [][]int32 {
 	}
 	return matrix
 }
+
 ////Rotate the matrix 270 degrees counterclockwise
 func Rotate270(matrix [][]int32) [][]int32 {
 	n := len(matrix)

@@ -1,4 +1,4 @@
-package intAndByte
+package intandbyte
 
 import (
 	"bytes"

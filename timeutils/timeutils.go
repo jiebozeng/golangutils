@@ -1,6 +1,6 @@
 // Based on Carcon development
 // 2006-01-02 15:04:05
-package timeUtils
+package timeutils
 
 import (
 	"github.com/golang-module/carbon"
