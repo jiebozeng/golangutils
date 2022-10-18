@@ -122,8 +122,8 @@ func NumChangeToIJ(n int32, row int32, col int32) (int32, int32) {
 }
 
 //matrix i j change to number
-func IJChangeToNum(i int32,j int32,row int32) int32 {
-	return i * row + j
+func IJChangeToNum(i int32, j int32, row int32) int32 {
+	return i*row + j
 }
 
 //Rotate the matrix 90 degrees counterclockwise
