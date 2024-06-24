@@ -11,7 +11,7 @@ func TestCreate(t *testing.T) {
 	timer.Start()
 
 	// 1秒的定时器,执行10次
-	timer.AddTimer(time.Second, 10, func(*Timer) {
+	timer.AddTimer(time.Minute, -1, func(*Timer) {
 		fmt.Println("timer 1 second")
 	})
 

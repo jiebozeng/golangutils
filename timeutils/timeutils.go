@@ -105,3 +105,10 @@ func TimeStampToStr(timestamp int64) string {
 	tm := time.Unix(timestamp, 0)
 	return tm.Format("2006-01-02 15:04:05")
 }
+
+/*
+获得多少天后的时间
+*/
+func GetTimeSubDateTime(value string, n int64) string {
+	return carbon.Parse(value).SubDays(int(n)).ToDateTimeString()
+}
