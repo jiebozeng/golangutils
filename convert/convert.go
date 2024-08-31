@@ -53,6 +53,8 @@ func ToInt64(value interface{}) int64 {
 		return int64(value.(uint32))
 	case int64:
 		return value.(int64)
+	case uint:
+		return int64(value.(uint))
 	case int:
 		return int64(value.(int))
 	case float64:
@@ -104,12 +106,14 @@ func ToString(value interface{}) string {
 		return strconv.FormatInt(value.(int64), 10)
 	case uint64:
 		return strconv.FormatUint(value.(uint64), 10)
+	case uint:
+		return strconv.FormatUint(uint64(value.(uint)), 10)
 	case time.Time:
 		return value.(time.Time).Format("2006-01-02 15:04:05")
 	case string:
 		return value.(string)
 	default:
-		debug.PrintStack()
+		//debug.PrintStack()
 		//log.Debug("ToString 类型没有定义:%v>>%T", value, value)
 		ret, err := json.Marshal(value)
 		if err != nil {
@@ -179,7 +183,8 @@ func ToBytes(value interface{}) []byte {
 	return []byte{}
 }
 
-/**
+/*
+*
 0 return false else  return true
 */
 func Int32ToBool(n int32) bool {
@@ -189,7 +194,8 @@ func Int32ToBool(n int32) bool {
 	return true
 }
 
-/**
+/*
+*
 0 return false else  return true
 */
 func Int64ToBool(n int64) bool {
@@ -198,19 +204,23 @@ func Int64ToBool(n int64) bool {
 	}
 	return true
 }
-/**
+
+/*
+*
 true return 1 else return 0
- */
+*/
 func BoolToInt32(b bool) int32 {
 	if b {
 		return 1
 	}
 	return 0
 }
-/**
+
+/*
+*
 true return 1 else return 0
 */
-func BoolToInt64(b bool) int64  {
+func BoolToInt64(b bool) int64 {
 	if b {
 		return 1
 	}
