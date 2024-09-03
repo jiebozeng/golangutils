@@ -178,6 +178,8 @@ func ToBytes(value interface{}) []byte {
 		v[2] = uint8(_v >> 8)
 		v[3] = uint8(_v)
 		return v
+	case string:
+		return []byte(value.(string))
 	}
 	//log.Debug("ToBytes 类型没有定义:%v>>%T", value, value)
 	return []byte{}
