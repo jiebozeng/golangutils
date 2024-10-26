@@ -108,7 +108,22 @@ func TimeStampToStr(timestamp int64) string {
 
 /*
 获得多少天后的时间
+n 为负数 多少天后
+n 为整数 多少天前
+2006-01-02 15:04:05
 */
 func GetTimeSubDateTime(value string, n int64) string {
 	return carbon.Parse(value).SubDays(int(n)).ToDateTimeString()
+}
+
+/*
+*获得多少天前、后日期 返回 20060102
+n 为负数 多少天后
+n 为整数 多少天前
+*/
+func GetTimeSubDate(value string, n int64) string {
+	before := GetTimeSubDateTime(value, n)
+	beforeDay := carbon.Parse(before).ToDateString()
+	beforeDay = strings.ReplaceAll(beforeDay, "-", "")
+	return beforeDay
 }
