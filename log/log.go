@@ -76,7 +76,10 @@ func getStdoutCore() zapcore.Core {
 	// Restrict log output level, logs of all levels will be printed if >= DebugLevel.
 	// Generally, >= ErrorLevel is used in a production environment.
 	levelEnablerFunc := zap.LevelEnablerFunc(func(level zapcore.Level) bool {
-		return level >= zapcore.DebugLevel
+		if logEnv == LogEnv_debug {
+			return level >= zapcore.DebugLevel
+		}
+		return level >= zapcore.ErrorLevel
 	})
 	// Use JSON format for logging.
 	encoder := getConfig()
@@ -111,7 +114,10 @@ func getFileCore() zapcore.Core {
 		Compress:   true,
 	})
 	encoder := getConfig()
-	return zapcore.NewCore(encoder, zapcore.Lock(writeSyncer), zapcore.DebugLevel)
+	if logEnv == LogEnv_debug {
+		return zapcore.NewCore(encoder, zapcore.Lock(writeSyncer), zapcore.DebugLevel)
+	}
+	return zapcore.NewCore(encoder, zapcore.Lock(writeSyncer), zapcore.ErrorLevel)
 }
 
 func getConfig() zapcore.Encoder {
