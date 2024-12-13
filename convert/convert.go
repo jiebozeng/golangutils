@@ -34,12 +34,12 @@ func ToInt32(value interface{}) int32 {
 		}
 		ret, err := strconv.ParseInt(value.(string), 10, 64)
 		if err != nil {
-			//log.Debug("value %v toint32: %v", value, err)
+			//logs.Debug("value %v toint32: %v", value, err)
 			debug.PrintStack()
 		}
 		return int32(ret)
 	}
-	//log.Debug("ToInt32 类型没有定义:%v  %T", value, value)
+	//logs.Debug("ToInt32 类型没有定义:%v  %T", value, value)
 	return 0
 }
 func ToInt64(value interface{}) int64 {
@@ -71,13 +71,13 @@ func ToInt64(value interface{}) int64 {
 		}
 		ret, err := strconv.ParseInt(value.(string), 10, 64)
 		if err != nil {
-			//log.Debug("value %v toint32: %v", value, err)
+			//logs.Debug("value %v toint32: %v", value, err)
 			debug.PrintStack()
 		}
 		return ret
 	}
 	debug.PrintStack()
-	//log.Debug("ToInt64 类型没有定义:%v :%T", value, value)
+	//logs.Debug("ToInt64 类型没有定义:%v :%T", value, value)
 	return 0
 }
 func ToUint32(value interface{}) uint32 {
@@ -114,10 +114,10 @@ func ToString(value interface{}) string {
 		return value.(string)
 	default:
 		//debug.PrintStack()
-		//log.Debug("ToString 类型没有定义:%v>>%T", value, value)
+		//logs.Debug("ToString 类型没有定义:%v>>%T", value, value)
 		ret, err := json.Marshal(value)
 		if err != nil {
-			//log.Debug("ToString Marshal:%v>>%v", err, value)
+			//logs.Debug("ToString Marshal:%v>>%v", err, value)
 		}
 		return string(ret)
 	}
@@ -132,13 +132,13 @@ func ToFloat64(value interface{}) float64 {
 	case string:
 		ret, err := strconv.ParseFloat(value.(string), 64)
 		if err != nil {
-			//log.Debug("value %v ToFloat64: %v", value, err)
+			//logs.Debug("value %v ToFloat64: %v", value, err)
 			debug.PrintStack()
 		}
 		return ret
 	}
 	debug.PrintStack()
-	//log.Debug("ToFloat64 类型没有定义:%v>>%T", value, value)
+	//logs.Debug("ToFloat64 类型没有定义:%v>>%T", value, value)
 	return 0
 }
 
@@ -154,12 +154,12 @@ func ToTime(value interface{}) time.Time {
 		str := value.(string)
 		ret, err := time.ParseInLocation("2006-01-02 15:04:05", str, time.Local)
 		if err != nil {
-			//log.Debug("toTime :%v>>%v", value, err)
+			//logs.Debug("toTime :%v>>%v", value, err)
 			return defaultTime
 		}
 		return ret
 	}
-	//log.Debug("ToTime 类型没有定义:%v>>%T", value, value)
+	//logs.Debug("ToTime 类型没有定义:%v>>%T", value, value)
 	return defaultTime
 }
 func ToBytes(value interface{}) []byte {
@@ -181,7 +181,7 @@ func ToBytes(value interface{}) []byte {
 	case string:
 		return []byte(value.(string))
 	}
-	//log.Debug("ToBytes 类型没有定义:%v>>%T", value, value)
+	//logs.Debug("ToBytes 类型没有定义:%v>>%T", value, value)
 	return []byte{}
 }
 

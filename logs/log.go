@@ -59,21 +59,21 @@ func InitLogger(_logTypes []string, _logPath string, _logEnv LogEnvType, _saveDa
 	tee := zapcore.NewTee(cores...)
 	// logger Output identification of calling code line.
 	ZapLogger = zap.New(tee, zap.AddCaller())
-	ZapLogger.Info("log server start")
+	ZapLogger.Info("logs server start")
 }
 
 func CloseLog() {
 	err := ZapLogger.Sync()
 	if err != nil {
-		err = errors.Wrap(err, "Failed to close the log.")
+		err = errors.Wrap(err, "Failed to close the logs.")
 		if err != nil {
-			log.Printf("Failed to close the log: %v", err)
+			log.Printf("Failed to close the logs: %v", err)
 		}
 	}
 }
 
 func getStdoutCore() zapcore.Core {
-	// Restrict log output level, logs of all levels will be printed if >= DebugLevel.
+	// Restrict logs output level, logs of all levels will be printed if >= DebugLevel.
 	// Generally, >= ErrorLevel is used in a production environment.
 	levelEnablerFunc := zap.LevelEnablerFunc(func(level zapcore.Level) bool {
 		if logEnv == LogEnv_debug {
@@ -94,7 +94,7 @@ func getFileCore() zapcore.Core {
 		if os.IsNotExist(err) {
 			err = os.MkdirAll(dir, 0o777)
 			if err != nil {
-				err = errors.Wrap(err, "Failed to create log directory.")
+				err = errors.Wrap(err, "Failed to create logs directory.")
 				panic(err)
 			}
 		}
@@ -102,7 +102,7 @@ func getFileCore() zapcore.Core {
 
 	err = os.Chmod(dir, 0o777)
 	if err != nil {
-		err = errors.Wrap(err, "Failed to modify log directory permissions.")
+		err = errors.Wrap(err, "Failed to modify logs directory permissions.")
 		panic(err)
 	}
 
