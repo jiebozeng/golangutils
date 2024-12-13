@@ -32,6 +32,7 @@ var saveDays int
 
 var ZapLogger *zap.Logger
 
+// init log
 func InitLogger(_logTypes []string, _logPath string, _logEnv LogEnvType, _saveDays int) {
 	for _, v := range _logTypes {
 		if v == string(LogType_file) {
